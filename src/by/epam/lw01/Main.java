@@ -27,7 +27,7 @@ public class Main {
     /**
      * Max price of treasure
      */
-    public static final int maxPrice = 100;
+    private static final int maxPrice = 100;
 
     /**
      * @param args Command line arguments
