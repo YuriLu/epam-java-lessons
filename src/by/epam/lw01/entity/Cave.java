@@ -40,7 +40,7 @@ public class Cave implements Iterable<Treasure> {
     }
 
     /**
-     * @return treasures
+     * @return treasures List of all treasures
      */
     public LinkedList<Treasure> getTreasures() {
         return treasures;

@@ -42,6 +42,9 @@ public class Controller {
         addCommand(new ExpensiveCommand(cave));
     }
 
+    /**
+     * Runt main dispatch cycle
+     */
     public void run() {
         while (true) {
             TransferObject inputTransferObject = view.getNextViewCommand();
