@@ -22,7 +22,12 @@ public class Main {
     /**
      * Count of treasures
      */
-    final static int treasureCount = 100;
+    private static final int treasureCount = 100;
+
+    /**
+     * Max price of treasure
+     */
+    public static final int maxPrice = 100;
 
     /**
      * @param args Command line arguments
@@ -52,7 +57,7 @@ public class Main {
         Random random = new Random();
 
         for (int i = 0; i < treasureCount; i++) {
-            cave.addTreasure(new Treasure(1 + random.nextInt(100)));
+            cave.addTreasure(new Treasure(1 + random.nextInt(maxPrice)));
         }
 
         return cave;
