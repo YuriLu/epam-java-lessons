@@ -12,6 +12,7 @@ import by.epam.lw01.entity.Cave;
 import by.epam.lw01.view.View;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Controller
@@ -26,7 +27,7 @@ public class Controller {
     /**
      * Commands set
      */
-    private HashMap<String, Command> commands = new HashMap<String, Command>();
+    private Map<String, Command> commands = new HashMap<String, Command>();
 
     /**
      * Simplify configuration of controller

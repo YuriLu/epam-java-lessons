@@ -13,6 +13,7 @@ import by.epam.lw01.entity.Treasure;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Determine the number of each item to include in a collection so that the
@@ -55,13 +56,13 @@ public class FindCommand implements Command {
             }
         });
 
-        LinkedList<Treasure> used = new LinkedList<Treasure>();
+        List<Treasure> used = new LinkedList<Treasure>();
 
         int currentPrice = 0;
         for (Treasure treasure : treasures) {
             if (currentPrice + treasure.getPrice() <= price) {
                 currentPrice += treasure.getPrice();
-                used.push(treasure);
+                used.add(treasure);
             }
         }
 

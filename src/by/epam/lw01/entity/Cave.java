@@ -9,6 +9,7 @@ package by.epam.lw01.entity;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Cave hold information about treasures
@@ -18,7 +19,7 @@ public class Cave implements Iterable<Treasure> {
     /**
      * List of treasures
      */
-    private LinkedList<Treasure> treasures = new LinkedList<Treasure>();
+    private List<Treasure> treasures = new LinkedList<Treasure>();
 
     /**
      * Add treasure to cave
@@ -42,7 +43,7 @@ public class Cave implements Iterable<Treasure> {
     /**
      * @return treasures List of all treasures
      */
-    public LinkedList<Treasure> getTreasures() {
+    public List<Treasure> getTreasures() {
         return treasures;
     }
 
