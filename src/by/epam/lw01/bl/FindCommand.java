@@ -70,11 +70,4 @@ public class FindCommand implements Command {
         return new ShowListTransferObject(result, currentPrice);
     }
 
-    /**
-     * @see by.epam.lw01.bl.Command
-     */
-    @Override
-    public String getCommandId() {
-        return ID;
-    }
 }

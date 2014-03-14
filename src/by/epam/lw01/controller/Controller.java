@@ -38,9 +38,9 @@ public class Controller {
     public Controller(View view, Cave cave) {
         this.view = view;
 
-        addCommand(new ShowCommand(cave));
-        addCommand(new FindCommand(cave));
-        addCommand(new ExpensiveCommand(cave));
+        addCommand(ShowCommand.ID, new ShowCommand(cave));
+        addCommand(FindCommand.ID, new FindCommand(cave));
+        addCommand(ExpensiveCommand.ID, new ExpensiveCommand(cave));
     }
 
     /**
@@ -75,8 +75,8 @@ public class Controller {
      *
      * @param command command to add
      */
-    public void addCommand(Command command) {
-        commands.put(command.getCommandId(), command);
+    public void addCommand(String id, Command command) {
+        commands.put(id, command);
     }
 
 }

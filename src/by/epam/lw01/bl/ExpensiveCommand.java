@@ -48,11 +48,4 @@ public class ExpensiveCommand implements Command {
         return new ShowTransferObject(expensive);
     }
 
-    /**
-     * @see Command
-     */
-    @Override
-    public String getCommandId() {
-        return ID;
-    }
 }

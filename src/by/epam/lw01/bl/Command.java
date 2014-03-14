@@ -20,8 +20,4 @@ public interface Command {
      */
     public TransferObject execute(TransferObject transferObject);
 
-    /**
-     * @return unique command id
-     */
-    public String getCommandId();
 }

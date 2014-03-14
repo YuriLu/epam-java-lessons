@@ -45,11 +45,4 @@ public class ShowCommand implements Command {
         }
     }
 
-    /**
-     * @see by.epam.lw01.bl.Command
-     */
-    @Override
-    public String getCommandId() {
-        return ID;
-    }
 }
