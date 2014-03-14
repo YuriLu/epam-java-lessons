@@ -49,7 +49,8 @@ public class Controller {
     public void run() {
         while (true) {
             TransferObject inputTransferObject = view.getNextViewCommand();
-            if (inputTransferObject instanceof ExitTransferObject) {
+
+            if (inputTransferObject == null) {
                 break;
             }
 

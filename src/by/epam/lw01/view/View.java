@@ -33,7 +33,7 @@ public class View {
             System.out.print("Most expensive: ");
             result = new ExpensiveTransferObject();
         } else {
-            result = new ExitTransferObject();
+            result = null;
         }
 
         iteration++;
