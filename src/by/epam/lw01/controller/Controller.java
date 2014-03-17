@@ -7,8 +7,11 @@
  */
 package by.epam.lw01.controller;
 
-import by.epam.lw01.bl.*;
-import by.epam.lw01.entity.Cave;
+import by.epam.lw01.bl.Command;
+import by.epam.lw01.bl.TransferObject;
+import by.epam.lw01.bl.command.ExpensiveCommand;
+import by.epam.lw01.bl.command.FindCommand;
+import by.epam.lw01.bl.command.ShowCommand;
 import by.epam.lw01.view.View;
 
 import java.util.HashMap;
@@ -33,14 +36,13 @@ public class Controller {
      * Simplify configuration of controller
      *
      * @param view presentation
-     * @param cave entity
      */
-    public Controller(View view, Cave cave) {
+    public Controller(View view) {
         this.view = view;
 
-        addCommand(ShowCommand.ID, new ShowCommand(cave));
-        addCommand(FindCommand.ID, new FindCommand(cave));
-        addCommand(ExpensiveCommand.ID, new ExpensiveCommand(cave));
+        addCommand(ShowCommand.ID, new ShowCommand());
+        addCommand(FindCommand.ID, new FindCommand());
+        addCommand(ExpensiveCommand.ID, new ExpensiveCommand());
     }
 
     /**

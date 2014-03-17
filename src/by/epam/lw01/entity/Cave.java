@@ -22,6 +22,18 @@ public class Cave implements Iterable<Treasure> {
     private List<Treasure> treasures = new LinkedList<Treasure>();
 
     /**
+     * Singleton instance
+     */
+    private static Cave instance;
+
+    /**
+     * Disable public construction
+     */
+    private Cave() {
+
+    }
+
+    /**
      * Add treasure to cave
      *
      * @param treasure new treasure
@@ -65,4 +77,19 @@ public class Cave implements Iterable<Treasure> {
     public Iterator<Treasure> iterator() {
         return treasures.iterator();
     }
+
+
+    /**
+     * Singleton
+     *
+     * @return Cave
+     */
+    public static Cave getInstance() {
+        if (null == instance) {
+            instance = new Cave();
+        }
+
+        return instance;
+    }
+
 }

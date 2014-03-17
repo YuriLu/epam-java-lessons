@@ -33,7 +33,8 @@ public class Main {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        Controller controller = new Controller(createView(), createCave());
+        createCave();
+        Controller controller = new Controller(createView());
         controller.run();
     }
 
@@ -52,7 +53,7 @@ public class Main {
      * @return Cave
      */
     private static Cave createCave() {
-        Cave cave = new Cave();
+        Cave cave = Cave.getInstance();
 
         Random random = new Random();
 

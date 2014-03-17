@@ -5,8 +5,12 @@
  *
  * Copyright Evgeny Shpilevsky
  */
-package by.epam.lw01.bl;
+package by.epam.lw01.bl.command;
 
+import by.epam.lw01.bl.Command;
+import by.epam.lw01.bl.TransferObject;
+import by.epam.lw01.bl.to.FindTransferObject;
+import by.epam.lw01.bl.to.ShowListTransferObject;
 import by.epam.lw01.entity.Cave;
 import by.epam.lw01.entity.Treasure;
 
@@ -28,23 +32,12 @@ public class FindCommand implements Command {
     public final static String ID = "find";
 
     /**
-     * Cave
-     */
-    private Cave cave;
-
-    /**
-     * @param cave Cave
-     */
-    public FindCommand(Cave cave) {
-        this.cave = cave;
-    }
-
-    /**
      * Search treasures for specified costs
      */
     @Override
     public TransferObject execute(TransferObject transferObject) {
         int price = ((FindTransferObject) transferObject).price;
+        Cave cave = Cave.getInstance();
 
         Treasure[] treasures = cave.getTreasures()
                 .toArray(new Treasure[cave.size()]);

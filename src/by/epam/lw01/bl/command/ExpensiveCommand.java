@@ -5,8 +5,11 @@
  *
  * Copyright Evgeny Shpilevsky
  */
-package by.epam.lw01.bl;
+package by.epam.lw01.bl.command;
 
+import by.epam.lw01.bl.Command;
+import by.epam.lw01.bl.TransferObject;
+import by.epam.lw01.bl.to.ShowTransferObject;
 import by.epam.lw01.entity.Cave;
 import by.epam.lw01.entity.Treasure;
 
@@ -21,25 +24,13 @@ public class ExpensiveCommand implements Command {
     public final static String ID = "expensive";
 
     /**
-     * Cave
-     */
-    private Cave cave;
-
-    /**
-     * @param cave Cave
-     */
-    public ExpensiveCommand(Cave cave) {
-        this.cave = cave;
-    }
-
-    /**
      * Search treasure
      */
     @Override
     public TransferObject execute(TransferObject transferObject) {
         Treasure expensive = null;
 
-        for (Treasure treasure : cave) {
+        for (Treasure treasure : Cave.getInstance()) {
             if (expensive == null || treasure.getPrice() > expensive.getPrice()) {
                 expensive = treasure;
             }

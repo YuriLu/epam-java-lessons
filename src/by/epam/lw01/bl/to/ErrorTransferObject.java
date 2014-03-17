@@ -5,7 +5,9 @@
  *
  * Copyright Evgeny Shpilevsky
  */
-package by.epam.lw01.bl;
+package by.epam.lw01.bl.to;
+
+import by.epam.lw01.bl.TransferObject;
 
 /**
  * Created by ftdebugger on 3/1/14.

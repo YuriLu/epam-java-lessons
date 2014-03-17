@@ -7,7 +7,8 @@
  */
 package by.epam.lw01.view;
 
-import by.epam.lw01.bl.*;
+import by.epam.lw01.bl.TransferObject;
+import by.epam.lw01.bl.to.*;
 import by.epam.lw01.entity.Treasure;
 
 /**
