@@ -7,12 +7,12 @@
  */
 package by.epam.lw02.controller;
 
-import by.epam.lw01.bl.Command;
-import by.epam.lw01.bl.TransferObject;
-import by.epam.lw01.bl.command.ExpensiveCommand;
-import by.epam.lw01.bl.command.FindCommand;
-import by.epam.lw01.bl.command.ShowCommand;
-import by.epam.lw01.view.View;
+import by.epam.lw02.bl.Command;
+import by.epam.lw02.bl.TransferObject;
+import by.epam.lw02.bl.command.AddFlowerCommand;
+import by.epam.lw02.bl.command.GetBouquetCommand;
+import by.epam.lw02.bl.command.SelectWrapCommand;
+import by.epam.lw02.view.View;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,9 +40,9 @@ public class Controller {
     public Controller(View view) {
         this.view = view;
 
-        addCommand(ShowCommand.ID, new ShowCommand());
-        addCommand(FindCommand.ID, new FindCommand());
-        addCommand(ExpensiveCommand.ID, new ExpensiveCommand());
+        addCommand(SelectWrapCommand.ID, new SelectWrapCommand());
+        addCommand(AddFlowerCommand.ID, new AddFlowerCommand());
+        addCommand(GetBouquetCommand.ID, new GetBouquetCommand());
     }
 
     /**
@@ -78,7 +78,7 @@ public class Controller {
      *
      * @param command command to add
      */
-    public void addCommand(String id, Command command) {
+    private void addCommand(String id, Command command) {
         commands.put(id, command);
     }
 

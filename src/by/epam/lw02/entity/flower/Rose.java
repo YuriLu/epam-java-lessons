@@ -12,4 +12,17 @@ import by.epam.lw02.entity.Flower;
  */
 public class Rose extends Flower {
 
+    public static final String ID = "rose";
+
+    private int thornLength;
+
+    public Rose(String color, int thornLength) {
+        super(color);
+        this.thornLength = thornLength;
+    }
+
+    @Override
+    public String toString() {
+        return color + " rose with " + thornLength + " thorn";
+    }
 }

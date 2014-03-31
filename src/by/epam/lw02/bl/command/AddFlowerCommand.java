@@ -6,20 +6,21 @@ import by.epam.lw02.bl.TransferObject;
 import by.epam.lw02.bl.exception.NotFoundException;
 import by.epam.lw02.bl.to.AppendedTransferObject;
 import by.epam.lw02.bl.to.ExceptionTransferObject;
-import by.epam.lw02.bl.to.wrap.WrapTransferObject;
+import by.epam.lw02.bl.to.flower.FlowerTransferObject;
 
 /**
+ *
  */
-public class SelectWrapCommand implements Command {
+public class AddFlowerCommand implements Command {
 
-    public final static String ID = "select-wrap";
+    public final static String ID = "add-flower";
 
     @Override
     public TransferObject execute(TransferObject transferObject) {
-        WrapTransferObject wrapTO = (WrapTransferObject) transferObject;
+        FlowerTransferObject flowerTO = (FlowerTransferObject) transferObject;
 
         try {
-            Builder.getInstance().setWrap(wrapTO);
+            Builder.getInstance().addFlower(flowerTO);
             return new AppendedTransferObject();
         } catch (NotFoundException e) {
             return new ExceptionTransferObject(e);

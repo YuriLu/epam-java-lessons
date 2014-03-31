@@ -1,4 +1,4 @@
-package by.epam.lw02.bl;
+package by.epam.lw02.bl.exception;
 
 /**
  * by.epam.lw02.bl

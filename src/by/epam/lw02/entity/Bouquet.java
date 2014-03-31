@@ -12,9 +12,8 @@ import java.util.List;
  */
 public class Bouquet {
 
-    Wrap wrap;
-
-    List<Flower> flowers = new LinkedList<Flower>();
+    private Wrap wrap;
+    private List<Flower> flowers = new LinkedList<Flower>();
 
     /**
      * Add flower
@@ -29,4 +28,11 @@ public class Bouquet {
         this.wrap = wrap;
     }
 
+    public Wrap getWrap() {
+        return wrap;
+    }
+
+    public List<Flower> getFlowers() {
+        return flowers;
+    }
 }
