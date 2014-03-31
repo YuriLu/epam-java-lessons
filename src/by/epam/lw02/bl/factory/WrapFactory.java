@@ -7,6 +7,9 @@ package by.epam.lw02.bl.factory;
 
 import by.epam.lw02.bl.TransferObject;
 import by.epam.lw02.bl.exception.NotFoundException;
+import by.epam.lw02.bl.to.wrap.MembraneTransferObject;
+import by.epam.lw02.bl.to.wrap.PaperTransferObject;
+import by.epam.lw02.bl.to.wrap.PotTransferObject;
 import by.epam.lw02.bl.to.wrap.WrapTransferObject;
 import by.epam.lw02.entity.Wrap;
 import by.epam.lw02.entity.wrap.Foil;
@@ -27,15 +30,18 @@ public class WrapFactory {
         }
 
         if (Paper.ID.equals(wrapType)) {
-            return new Paper(wrapTransferObject.color, wrapTransferObject.pattern);
+            PaperTransferObject paperTransferObject = (PaperTransferObject) transferObject;
+            return new Paper(paperTransferObject.color, paperTransferObject.pattern);
         }
 
         if (Membrane.ID.equals(wrapType)) {
-            return new Membrane(wrapTransferObject.color, wrapTransferObject.density);
+            MembraneTransferObject membraneTransferObject = (MembraneTransferObject) transferObject;
+            return new Membrane(membraneTransferObject.color, membraneTransferObject.density);
         }
 
         if (Pot.ID.equals(wrapType)) {
-            return new Pot(wrapTransferObject.color, wrapTransferObject.form, wrapTransferObject.material);
+            PotTransferObject potTransferObject = (PotTransferObject) transferObject;
+            return new Pot(wrapTransferObject.color, potTransferObject.form, potTransferObject.material);
         }
 
         throw new NotFoundException("Wrap not found " + wrapType);

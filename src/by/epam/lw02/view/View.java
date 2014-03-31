@@ -36,7 +36,7 @@ public class View {
             result = new ChamomileTransferObject("white", 12);
         } else if (iteration >= 2 && iteration <= 5) {
             result = new RoseTransferObject("red", 1);
-        } else if (iteration > 5) {
+        } else if (iteration == 6) {
             result = new GetBouquetTransferObject();
         } else {
             result = null;
