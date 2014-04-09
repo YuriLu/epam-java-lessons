@@ -20,7 +20,7 @@ public class RegExpChain<T> {
         this.factory = factory;
     }
 
-    public T nextPart(Buffer buffer) throws Exception {
+    public T nextPart(Buffer buffer) throws ParseException {
         Matcher m = pattern.matcher(buffer.getText());
         if (m.find()) {
             String match = m.group();
@@ -30,7 +30,7 @@ public class RegExpChain<T> {
             if (next != null) {
                 return next.nextPart(buffer);
             } else {
-                throw new Exception("Cannot parse anymore");
+                throw new ParseException("Cannot parse anymore");
             }
         }
     }

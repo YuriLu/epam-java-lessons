@@ -1,5 +1,6 @@
 package by.epam.lw03.text.sentence;
 
+import by.epam.lw03.parser.ParseException;
 import by.epam.lw03.text.Factory;
 
 /**
@@ -7,7 +8,7 @@ import by.epam.lw03.text.Factory;
 public class SentenceFactory implements Factory<SentencePart> {
 
     @Override
-    public SentencePart factory(String type, String text) throws Exception {
+    public SentencePart factory(String type, String text) throws ParseException {
         if (Punctuation.ID.equals(type)) {
             return new Punctuation(text);
         }
@@ -20,6 +21,6 @@ public class SentenceFactory implements Factory<SentencePart> {
             return new Word(text);
         }
 
-        throw new Exception("Cannot create sentence part");
+        throw new ParseException("Cannot create sentence part");
     }
 }

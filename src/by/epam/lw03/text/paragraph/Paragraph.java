@@ -1,5 +1,6 @@
 package by.epam.lw03.text.paragraph;
 
+import by.epam.lw03.parser.ParseException;
 import by.epam.lw03.parser.ParserFactory;
 import by.epam.lw03.text.document.DocumentPart;
 
@@ -13,7 +14,7 @@ public class Paragraph extends DocumentPart {
 
     private List<ParagraphPart> parts;
 
-    public Paragraph(String text) throws Exception {
+    public Paragraph(String text) throws ParseException {
         super(text);
 
         ParserFactory factory = new ParserFactory();

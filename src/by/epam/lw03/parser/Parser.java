@@ -13,7 +13,7 @@ public class Parser<T> {
         this.chain = chain;
     }
 
-    public List<T> parse(String text) throws Exception {
+    public List<T> parse(String text) throws ParseException {
         Buffer buffer = new Buffer(text);
         List<T> list = new LinkedList<T>();
 
