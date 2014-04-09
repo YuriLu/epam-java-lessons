@@ -41,4 +41,8 @@ public class Sentence extends ParagraphPart {
 
         return list;
     }
+
+    public List<SentencePart> getParts() {
+        return parts;
+    }
 }

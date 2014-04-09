@@ -1,6 +1,7 @@
 package by.epam.lw03;
 
 import by.epam.lw03.bl.WordMatcher;
+import by.epam.lw03.bl.WordShuffle;
 import by.epam.lw03.parser.Parser;
 import by.epam.lw03.parser.ParserFactory;
 import by.epam.lw03.text.document.Document;
@@ -32,7 +33,12 @@ public class Main {
 
 
             WordMatcher matcher = new WordMatcher();
+            WordShuffle shuffle = new WordShuffle();
+
             matcher.process(document);
+            shuffle.process(document);
+
+            System.out.println(document);
         } catch (Exception e) {
             e.printStackTrace();
         }
