@@ -4,6 +4,7 @@ import by.epam.lw03.parser.ParseException;
 import by.epam.lw03.parser.ParserFactory;
 import by.epam.lw03.text.document.DocumentPart;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -29,5 +30,17 @@ public class Paragraph extends DocumentPart {
         }
 
         return result;
+    }
+
+    public List<Sentence> getSentences() {
+        List<Sentence> list = new LinkedList<Sentence>();
+
+        for (ParagraphPart part : parts) {
+            if (part instanceof Sentence) {
+                list.add((Sentence) part);
+            }
+        }
+
+        return list;
     }
 }

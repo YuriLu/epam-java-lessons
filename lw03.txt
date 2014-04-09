@@ -67,8 +67,7 @@ class IfElseDemo {
     }
 }
 
-The output from the program is:
-Grade = C
+The output from the program is: Grade = C
 
 You may have noticed that the value of testscore can satisfy more than one expression in the
 compound statement: 76 >= 70 and 76 >= 60 . However, once a condition is satisfied, the

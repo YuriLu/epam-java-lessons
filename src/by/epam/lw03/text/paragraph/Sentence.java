@@ -3,7 +3,9 @@ package by.epam.lw03.text.paragraph;
 import by.epam.lw03.parser.ParseException;
 import by.epam.lw03.parser.ParserFactory;
 import by.epam.lw03.text.sentence.SentencePart;
+import by.epam.lw03.text.sentence.Word;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -26,5 +28,17 @@ public class Sentence extends ParagraphPart {
         }
 
         return result;
+    }
+
+    public List<Word> getWords() {
+        List<Word> list = new LinkedList<Word>();
+
+        for (SentencePart part : parts) {
+            if (part instanceof Word) {
+                list.add((Word) part);
+            }
+        }
+
+        return list;
     }
 }

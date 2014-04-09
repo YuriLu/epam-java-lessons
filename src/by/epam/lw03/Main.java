@@ -1,5 +1,6 @@
 package by.epam.lw03;
 
+import by.epam.lw03.bl.WordMatcher;
 import by.epam.lw03.parser.Parser;
 import by.epam.lw03.parser.ParserFactory;
 import by.epam.lw03.text.document.Document;
@@ -29,7 +30,9 @@ public class Main {
             List<DocumentPart> parts = documentParser.parse(text);
             Document document = new Document(parts);
 
-            System.out.println(document);
+
+            WordMatcher matcher = new WordMatcher();
+            matcher.process(document);
         } catch (Exception e) {
             e.printStackTrace();
         }
