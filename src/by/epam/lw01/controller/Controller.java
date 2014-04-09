@@ -46,7 +46,7 @@ public class Controller {
     }
 
     /**
-     * Runt main dispatch cycle
+     * Run main dispatch cycle
      */
     public void run() {
         while (true) {
