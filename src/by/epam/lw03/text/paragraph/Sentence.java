@@ -10,12 +10,10 @@ import java.util.List;
 
 /**
  */
-public class Sentence extends ParagraphPart {
-    public final static String ID = "sentence";
-    List<SentencePart> parts;
+public class Sentence implements ParagraphPart {
+    private List<SentencePart> parts;
 
     public Sentence(String text) throws ParseException {
-        super(text);
         ParserFactory factory = new ParserFactory();
         parts = factory.sentenceParser().parse(text);
     }
@@ -45,4 +43,28 @@ public class Sentence extends ParagraphPart {
     public List<SentencePart> getParts() {
         return parts;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        return ((Sentence) obj).parts.equals(parts);
+    }
+
+    @Override
+    public int hashCode() {
+        return parts.hashCode();
+    }
+
 }

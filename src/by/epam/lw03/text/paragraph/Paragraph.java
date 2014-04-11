@@ -9,15 +9,11 @@ import java.util.List;
 
 /**
  */
-public class Paragraph extends DocumentPart {
-
-    public static final String ID = "paragraph";
+public class Paragraph implements DocumentPart {
 
     private List<ParagraphPart> parts;
 
     public Paragraph(String text) throws ParseException {
-        super(text);
-
         ParserFactory factory = new ParserFactory();
         parts = factory.paragraphParser().parse(text);
     }
@@ -42,5 +38,27 @@ public class Paragraph extends DocumentPart {
         }
 
         return list;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        return ((Paragraph) obj).parts.equals(parts);
+    }
+
+    @Override
+    public int hashCode() {
+        return parts.hashCode();
     }
 }

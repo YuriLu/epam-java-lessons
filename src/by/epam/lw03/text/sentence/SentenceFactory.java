@@ -8,16 +8,16 @@ import by.epam.lw03.text.Factory;
 public class SentenceFactory implements Factory<SentencePart> {
 
     @Override
-    public SentencePart factory(String type, String text) throws ParseException {
-        if (Punctuation.ID.equals(type)) {
+    public SentencePart factory(Class type, String text) throws ParseException {
+        if (Punctuation.class.equals(type)) {
             return new Punctuation(text);
         }
 
-        if (Whitespace.ID.equals(type)) {
+        if (Whitespace.class.equals(type)) {
             return new Whitespace(text);
         }
 
-        if (Word.ID.equals(type)) {
+        if (Word.class.equals(type)) {
             return new Word(text);
         }
 

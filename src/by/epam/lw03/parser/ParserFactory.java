@@ -22,8 +22,8 @@ public class ParserFactory {
         String paragraphPattern = bundle.getString("lw03.paragraphPattern");
 
         Factory<DocumentPart> factory = new DocumentPartFactory();
-        RegExpChain<DocumentPart> chain = new RegExpChain<DocumentPart>(codePattern, Code.ID, factory);
-        chain.createNext(paragraphPattern, Paragraph.ID);
+        RegExpChain<DocumentPart> chain = new RegExpChain<DocumentPart>(codePattern, Code.class, factory);
+        chain.createNext(paragraphPattern, Paragraph.class);
 
         return new Parser<DocumentPart>(chain);
     }
@@ -32,7 +32,7 @@ public class ParserFactory {
         String sentencePattern = bundle.getString("lw03.sentencePattern");
 
         Factory<ParagraphPart> factory = new ParagraphPartFactory();
-        RegExpChain<ParagraphPart> chain = new RegExpChain<ParagraphPart>(sentencePattern, Sentence.ID, factory);
+        RegExpChain<ParagraphPart> chain = new RegExpChain<ParagraphPart>(sentencePattern, Sentence.class, factory);
 
         return new Parser<ParagraphPart>(chain);
     }
@@ -43,9 +43,9 @@ public class ParserFactory {
         String word = bundle.getString("lw03.wordPattern");
 
         Factory<SentencePart> factory = new SentenceFactory();
-        RegExpChain<SentencePart> chain = new RegExpChain<SentencePart>(word, Word.ID, factory);
-        chain.createNext(punctuation, Punctuation.ID)
-                .createNext(whitespace, Whitespace.ID);
+        RegExpChain<SentencePart> chain = new RegExpChain<SentencePart>(word, Word.class, factory);
+        chain.createNext(punctuation, Punctuation.class)
+                .createNext(whitespace, Whitespace.class);
 
         return new Parser<SentencePart>(chain);
     }

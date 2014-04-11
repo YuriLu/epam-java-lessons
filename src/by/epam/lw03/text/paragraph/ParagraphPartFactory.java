@@ -7,8 +7,8 @@ import by.epam.lw03.text.Factory;
  */
 public class ParagraphPartFactory implements Factory<ParagraphPart> {
     @Override
-    public ParagraphPart factory(String type, String text) throws ParseException {
-        if (Sentence.ID.equals(type)) {
+    public ParagraphPart factory(Class type, String text) throws ParseException {
+        if (Sentence.class.equals(type)) {
             return new Sentence(text);
         }
 

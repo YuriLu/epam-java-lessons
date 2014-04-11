@@ -2,23 +2,37 @@ package by.epam.lw03.text.sentence;
 
 /**
  */
-public class Word extends SentencePart {
-    public static final String ID = "word";
+public class Word implements SentencePart {
+    private String text;
 
     public Word(String text) {
-        super(text);
+        this.text = text;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
         if (obj == null) {
             return false;
         }
 
-        if (!(obj instanceof Word)) {
-            return super.equals(obj);
+        if (getClass() != obj.getClass()) {
+            return false;
         }
 
         return ((Word) obj).text.equals(text);
+    }
+
+    @Override
+    public int hashCode() {
+        return text.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return text;
     }
 }

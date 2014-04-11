@@ -9,12 +9,12 @@ import by.epam.lw03.text.paragraph.Paragraph;
 public class DocumentPartFactory implements Factory<DocumentPart> {
 
     @Override
-    public DocumentPart factory(String type, String text) throws ParseException {
-        if (Code.ID.equals(type)) {
+    public DocumentPart factory(Class type, String text) throws ParseException {
+        if (Code.class.equals(type)) {
             return new Code(text);
         }
 
-        if (Paragraph.ID.equals(type)) {
+        if (Paragraph.class.equals(type)) {
             return new Paragraph(text);
         }
 

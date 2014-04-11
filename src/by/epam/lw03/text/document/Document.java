@@ -48,4 +48,26 @@ public class Document {
 
         return list;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        return ((Document) obj).parts.equals(parts);
+    }
+
+    @Override
+    public int hashCode() {
+        return parts.hashCode();
+    }
 }

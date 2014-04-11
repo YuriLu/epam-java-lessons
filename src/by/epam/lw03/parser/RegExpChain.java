@@ -10,11 +10,11 @@ import java.util.regex.Pattern;
 public class RegExpChain<T> {
 
     private Pattern pattern;
-    private String type;
+    private Class type;
     private RegExpChain<T> next;
     private Factory<T> factory;
 
-    public RegExpChain(String expression, String type, Factory<T> factory) {
+    public RegExpChain(String expression, Class type, Factory<T> factory) {
         this.pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         this.type = type;
         this.factory = factory;
@@ -35,7 +35,7 @@ public class RegExpChain<T> {
         }
     }
 
-    public RegExpChain createNext(String expression, String type) {
+    public RegExpChain createNext(String expression, Class type) {
         return next = new RegExpChain<T>(expression, type, factory);
     }
 }
