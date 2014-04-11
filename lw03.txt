@@ -29,7 +29,7 @@ more brittle. If a second statement is later added to the "then" clause, a commo
 be forgetting to add the newly required braces. The compiler cannot catch this sort of error;
 you'll just get the wrong results.
 
-1.2. The if-then-else Statement
+1.2. The if-then-else Statement.
 The if-then-else statement provides a secondary path of execution when an "if" clause
 evaluates to false . You could use an if-then-else statement in the applyBrakes method to
 take some action if the brakes are applied when the bicycle is not in motion. In this case, the
