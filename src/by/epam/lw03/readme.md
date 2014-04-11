@@ -2,6 +2,7 @@
 ======================
 
 Исходный текст [https://github.com/ftdebugger/epam-java-lessons/blob/master/lw03.txt](https://github.com/ftdebugger/epam-java-lessons/blob/master/lw03.txt)
+
 Настройки парсера [https://github.com/ftdebugger/epam-java-lessons/blob/master/src/main_en_US.properties](https://github.com/ftdebugger/epam-java-lessons/blob/master/src/main_en_US.properties)
 
 Задания
