@@ -32,7 +32,7 @@ public class Paragraph implements DocumentPart {
         List<Sentence> list = new LinkedList<Sentence>();
 
         for (ParagraphPart part : parts) {
-            if (part instanceof Sentence) {
+            if (part.getClass() == Sentence.class) {
                 list.add((Sentence) part);
             }
         }

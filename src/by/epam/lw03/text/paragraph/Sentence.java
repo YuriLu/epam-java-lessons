@@ -32,7 +32,7 @@ public class Sentence implements ParagraphPart {
         List<Word> list = new LinkedList<Word>();
 
         for (SentencePart part : parts) {
-            if (part instanceof Word) {
+            if (part.getClass() == Word.class) {
                 list.add((Word) part);
             }
         }
