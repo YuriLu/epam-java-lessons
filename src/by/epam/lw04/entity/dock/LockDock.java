@@ -81,7 +81,7 @@ public class LockDock implements Dock {
         }
     }
 
-    private synchronized int tryLoad(int max) {
+    private int tryLoad(int max) {
         lock.lock();
         try {
             if (currentWeight >= max) {
@@ -101,7 +101,7 @@ public class LockDock implements Dock {
         }
     }
 
-    private synchronized boolean tryPlace(int weight) {
+    private boolean tryPlace(int weight) {
         lock.lock();
         try {
             if (currentWeight + weight > maxWeight) {

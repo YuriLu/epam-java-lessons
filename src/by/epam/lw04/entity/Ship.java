@@ -41,6 +41,6 @@ public class Ship {
     }
 
     public void addCargo(int weight) {
-        currentWeight += maxWeight;
+        currentWeight += weight;
     }
 }
