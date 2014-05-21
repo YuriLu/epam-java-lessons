@@ -26,7 +26,7 @@ public class Main {
 
         // run
         for (int i = 0; i < 20; i++) {
-            threads[i].run();
+            threads[i].start();
         }
 
         // wait
