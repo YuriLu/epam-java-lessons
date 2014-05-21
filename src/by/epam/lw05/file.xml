@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<tariffs
+        xmlns="http://example.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://example.com schema.xsd"
+        xsi:noNamespaceSchemaLocation="schema.xsd">
+    <tariff>
+        <id>1</id>
+        <title>WEB 500</title>
+        <type>internet</type>
+        <price>20000</price>
+        <started>2014-01-30</started>
+        <active>true</active>
+    </tariff>
+    <tariff>
+        <id>2</id>
+        <title>WEB 1000</title>
+        <type>internet</type>
+        <price>35000</price>
+        <started>2014-01-03</started>
+        <active>true</active>
+    </tariff>
+    <tariff>
+        <id>3</id>
+        <title>Privet</title>
+        <type>mobile</type>
+        <price>60000</price>
+        <started>2014-06-15</started>
+        <active>false</active>
+    </tariff>
+</tariffs>

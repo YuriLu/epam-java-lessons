@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="tariffs">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="tariff">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:ID"/>
+                            <xs:element name="title" type="xs:string">
+                                <xs:simpleType>
+                                    <xs:restriction>
+                                        <xs:pattern value="[a-z 0-9]+"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="mobile"/>
+                                        <xs:enumeration value="internet"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="price">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="0"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="started" type="xs:date"/>
+                            <xs:element name="active" type="xs:boolean"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
